@@ -1,0 +1,5 @@
+How do control structures make programs more "Intelligent" and user-responsive?
+
+The fact that it can be used for decision making, I think it helps program be more interactive and useful. Also it benefits people as these kind of programs
+are used in fast-food chains or machines that we used in our daily lives. Control structures can help a program have a soul and responsive I think that's what makes it 
+intelligent.
