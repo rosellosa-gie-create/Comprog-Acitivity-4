@@ -17,7 +17,7 @@ printf("===== SMART ACCESS VALIDATOR =====\n");
 printf("\n");
 //I'm using while-loop for the number of attempts
 while (attempt <= 3) {
-	printf("\nATTEMPT %d of 3\n", attempt);
+	printf("ATTEMPT %d of 3\n", attempt);
 	printf("ENTER USERNAME: "); // prompting user to type username
 	gets(username);
 
