@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <conio.h>
+#include <string.h> // library required for strcmp 
+
+int main () {
+//data-types and variables
+char username[50], password[50];
+char correct_user[] = "admin";
+char correct_pass[] = "1234";
+int choice;
+int attempt = 1;
+int success = 0;
+
+clrscr();
+
+printf("===== SMART ACCESS VALIDATOR =====\n");
+printf("\n");
+//I'm using while-loop for the number of attempts
+while (attempt <= 3) {
+	printf("\nATTEMPT %d of 3\n", attempt);
+	printf("ENTER USERNAME: "); // prompting user to type username
+	gets(username);
+
+	printf("ENTER PASSWORD: "); // prompting to enter password
+	gets(password);
+
+// nested-if wherein I used strcmp to compare string and input
+if (strcmp(username, correct_user) == 0) { 
+	if (strcmp(password, correct_pass) == 0) {
+	printf("ACCESS GRANTED!\n"); // if the username and password match/true it will display "Access Granted" 
+	success = 1; //calculated as one attempt or success
+	break;
+	} else {
+	printf("INCORRECT PASSWORD\n"); // if the password didn't match the else statement will display the "incorrect password" 
+	}
+} else if (strcmp(password, correct_pass) == 0) {
+	printf("USER NOT FOUND\n"); //if the password is correct but the user didn't matched/false it will display "User not found"
+	} else {
+	printf("INVALID CREDENTIALS\n"); //if the username didn't matched, it will come out as false and will display "Invalid Credentials"
+	}
+  attempt++; // loop or move to the next attempt
+}
+
+if (success == 0) {
+   printf("ACCESS DENIED. TRY AGAIN LATER\n"); // if it exceeds attempts with zero success it will display "Access Denied"
+
+getch();
+return 0;
+
+}
+//if the access granted it will display the main menu
+printf("\n===== MAIN MENU =====\n"); // switch display
+printf("1. View Profile\n");
+printf("2. Change Password\n");
+printf("3. Log Out\n");
+
+printf("ENTER YOUR CHOICE: "); // prompting the user to make decision/action  
+scanf("%d", &choice);
+
+switch (choice) {
+      case 1:
+	printf("Profile Details Shown\n"); // choosing option 1 will print or shown profile details
+	break;
+      case 2:
+	printf("Password Changed Successfully\n"); // choosing option 2 will print or change password
+	break;
+      case 3:
+	printf("You have logged out\n"); // the code will not exit unless prompted or choose 
+	break;
+      default:
+	printf("Invalid Choice\n");
+}
+
+getch();
+
+return 0;
+
+}
+
